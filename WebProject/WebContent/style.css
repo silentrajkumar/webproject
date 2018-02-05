@@ -1,0 +1,94 @@
+@CHARSET "ISO-8859-1";
+
+body
+{
+	background-image: url("images.jpg");
+}
+h1
+{
+	color:#161ce9;
+	font: normal;
+	font-size: 24px;
+	text-align: center;
+	
+}
+select
+{
+	color:black;
+	border-radius: 12px;
+	text-align: center;
+	font: normal;
+	background-color: #af7854;
+	width:144px;
+    padding: 0 0 0 3em;
+    background: #af7854;
+}
+
+.select
+{
+	color:black;
+	border-radius: 12px;
+	text-align: center;
+	font: normal;
+	background-color: #af7854;
+	width:144px;
+    overflow: hidden;
+	     
+}
+
+
+h2
+{
+	color: #7a83ef;
+	font: normal;
+	font-size: 18px;
+	
+	
+}
+td
+{
+	color:black;
+}
+.reg
+{
+	color:blue;
+	
+	size: 12px;
+	font: normal;
+	border: none;
+	padding: 8px 18px;
+	background-color: #7a83ef;
+	border-radius:12px;
+	
+}
+input[type=text],input[type=password]
+{
+	size:24px;
+	background-color: #af7854;
+	border: none;
+	color:black;
+	border-radius: 12px;
+	text-align: center;
+	text-overflow: ellipsis;
+	text-decoration: inherit;
+	size: 24px;
+}
+input[type=text]:focus,input[type=password]:focus
+{
+	background-color: #3962a4;
+	
+}
+
+
+
+input[type=checkbox]
+{
+	background-color: #af7854;
+	border-radius: 12px;
+}
+
+input[type=radio]
+{
+	background-color: #af7854;
+	border-radius: 12px;
+}
