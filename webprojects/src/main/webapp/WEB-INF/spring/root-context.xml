@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+	
+	<!-- Root Context: defines shared resources visible to all other web components -->
+		
+			
+	<bean id="dataSource" class="org.springframework.jdbc.datasource.DriverManagerDataSource">
+	<property name="driverClassName" value="com.mysql.jdbc.driver"></property>
+	<property name="url" value="mysql://localhost:3308/webpages"></property>
+	<property name="username" value="root"></property>
+	<property name="password" value="">
+	
+	</property>
+	</bean>
+	
+	<bean id="sessionFactory" class="org.springframework.orm.hibernate3.annotation.AnnotationSessionFactoryBean">
+	<property name="dataSource"><ref local="dataSource"/></property>
+	
+	<property name="hibernateProperties">
+	
+	<props>
+	<prop key="hibernatedialect">org.hibernate.dialect.MySQLDialect</prop>
+	<prop key="hibernate.show.sql">true</prop>
+	<prop key="hibernate.hbm2ddl.auto">update</prop>
+	</props>
+	</property>
+	<property name="annotatedClasses">
+	<list>
+	<value>com.webprojects.login.beans.StudentBeans</value>
+	</list>
+	</property>
+	</bean> 
+	<bean id="transactionManager" class="org.springframework.orm.hibernate4.HibernateTransactionManager">
+	<property name="sessionFactory"> <ref local="sessionFactory"/></property>
+	</bean>
+	<bean id="StudentDao" class="com.webprojects.login.dao.StudentDaoImple">
+	<property name="sessionFactory"> <ref local="sessionFactory"/></property>
+	</bean>
+	<bean id="StudentService" class="com.webprojects.login.service.StudentServiceImple">
+	<property name="studentDao"> <ref local="StudentDao"/></property>
+	</bean>
+</beans>
