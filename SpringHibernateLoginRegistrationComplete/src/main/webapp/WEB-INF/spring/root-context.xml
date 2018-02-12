@@ -36,11 +36,12 @@
 
 	<bean id="customerDao" class="com.login.system.dao.CustomerDaoImpl">
 		<property name="sessionfactory" ref="sessionFactory"></property>
-	</bean>
-	<bean id="customerService" class="com.login.system.services.CustomerServiceImpl">
-		<property name="customerDao" ref="customerDao"></property>
-	</bean>
 
+	</bean>
+	 <bean id="customerService" class="com.login.system.services.CustomerServiceImpl">
+		<property name="customerDao" ref="customerDao"></property>
+	</bean> 
+	
 </beans>
 
 

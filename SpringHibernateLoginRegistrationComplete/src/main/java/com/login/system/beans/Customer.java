@@ -10,7 +10,7 @@ import javax.persistence.Table;
 import org.hibernate.validator.constraints.NotEmpty;
 
 	@Entity
-	@Table  // no need to mention table name by default it takes class name
+	@Table(name="table1")  // no need to mention table name by default it takes class name
 	public class Customer {
 
 		@Id

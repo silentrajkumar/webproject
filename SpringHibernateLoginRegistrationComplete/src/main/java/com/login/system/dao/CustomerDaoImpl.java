@@ -39,11 +39,15 @@ public class CustomerDaoImpl implements CustomerDao {
 	public Customer loginCustomer(Customer customer) {
 		Session session = sessionFactory.openSession();
 		Transaction tx = session.beginTransaction();
-		String hql = "from com.login.system.beans.Customer as c where c.c_email =? and c.c_password =?";
+		String hql = "INSERT INTO CUSTOMER  VALUES(?,?,?,?,?,?,)";
 		try {
 			Query query = session.createQuery(hql);
-			query.setParameter(0, customer.getC_email());
-			query.setParameter(1, customer.getC_password());
+			query.setParameter(0, customer.getC_id());
+			query.setParameter(1, customer.getC_name());
+			query.setParameter(2, customer.getC_mobile());
+			query.setParameter(3, customer.getC_gender());
+			query.setParameter(4, customer.getC_email());
+			query.setParameter(5, customer.getC_password());
 			customer = (Customer) query.uniqueResult();
 			tx.commit();
 			session.close();
